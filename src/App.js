@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from "styled-components";
+import Sidebar from "./components/Sidebar"
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,13 +14,18 @@ import Header from './components/Header';
 function App() {
   return (
     <div className="App">
+    
     <Router>
-      
+    <Header/>
+    <AppBody>
+    <Sidebar/>
         <Switch>
           <Route path="/" exact>
-           <Header/>
+            {/*chat*/}
           </Route>
+        
         </Switch>
+        </AppBody>
       
     </Router>
       
@@ -27,3 +34,8 @@ function App() {
 }
 
 export default App;
+
+const AppBody=styled.div`
+display:flex;
+height:100vh;
+`;
